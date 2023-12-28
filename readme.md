@@ -4,6 +4,8 @@ small library to interact with a [Mycroft Mark1 faceplate via the messagebus](ht
 
 gives you full control of the faceplate and eyes pixel by pixel
 
+![](./demo/86788719_10157996735085818_3139665318654246912_n.jpg)
+
 ## Usage
 
 drawing in python
