@@ -1,6 +1,6 @@
 # OVOS Mark1 Client
 
-small library to interact with a Mycroft Mark1 faceplate via the messagebus
+small library to interact with a [Mycroft Mark1 faceplate via the messagebus](https://openvoiceos.github.io/message_spec/phal_mk1/)
 
 gives you full control of the faceplate and eyes pixel by pixel
 
