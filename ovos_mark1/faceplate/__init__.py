@@ -5,7 +5,7 @@ from time import sleep
 
 from ovos_utils import create_loop
 from ovos_utils.log import LOG
-from ovos_utils.messagebus import get_mycroft_bus
+from ovos_bus_client.util import get_mycroft_bus
 
 from ovos_mark1 import Mark1EnclosureAPI
 
