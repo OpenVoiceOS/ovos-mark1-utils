@@ -564,7 +564,7 @@ class StraightParticleShooter(FacePlateAnimation):
 
 
 if __name__ == "__main__":
-    from ovos_utils.messagebus import get_mycroft_bus
+    from ovos_bus_client.util import get_mycroft_bus
     from time import sleep
 
     bus = get_mycroft_bus("192.168.1.70")

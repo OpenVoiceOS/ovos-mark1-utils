@@ -24,7 +24,7 @@ XXXXXXXXXXXXX  XX  XXXXXXXXXXXXX
 XXXXXXXXXXXX   X   XXXXXXXXXXXXX
 XXXXXXXXXXXXX XXX XXXXXXXXXXXXXX
 """
-    
+
 icon = MusicIcon()
 icon.print()  # show in terminal
 icon.display()  # show in mark1
@@ -34,7 +34,7 @@ Animate the eyes
 
 ```python
 from ovos_mark1.eyes import Eyes
-from ovos_utils.messagebus import get_mycroft_bus
+from ovos_bus_client.util import get_mycroft_bus
 
 bus = get_mycroft_bus("0.0.0.0")
 
@@ -87,7 +87,7 @@ for faceplate in ParticleBox(bus=bus):
     faceplate.display(invert=False)
     sleep(0.5)
 
-    
+
 from ovos_mark1.faceplate.cellular_automaton import Rule110
 
 a = Rule110(bus=bus)
