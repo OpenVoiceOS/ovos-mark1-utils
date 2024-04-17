@@ -1,7 +1,7 @@
 from time import sleep
 
 from ovos_utils import rotate_list
-from ovos_utils.colors import Color
+from lingua_franca.util.colors import Color
 from ovos_bus_client.util import get_mycroft_bus
 
 from ovos_mark1 import Mark1EnclosureAPI
