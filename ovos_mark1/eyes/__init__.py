@@ -224,7 +224,8 @@ class Eyes(list):
         assert 0 <= key <= 23
         if key < 12:
             self.left[key] = value
-        self.right[key] = value
+        else:
+            self.right[key - 12] = value
 
     def __iter__(self):
         for i in range(len(self)):
