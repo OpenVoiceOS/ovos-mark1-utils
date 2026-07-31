@@ -1,18 +1,21 @@
 # OVOS Mark1 Client
 
-small library to interact with a [Mycroft Mark1 faceplate via the messagebus](https://openvoiceos.github.io/message_spec/phal_mk1/)
+This library controls the faceplate and eyes of the Mycroft Mark 1 hardware enclosure. It sends commands over the [OVOS messagebus](https://openvoiceos.github.io/message_spec/phal_mk1/) and gives you pixel-by-pixel control of the 32x8 mouth display and the eye ring.
 
-gives you full control of the faceplate and eyes pixel by pixel
+![Mark 1 device showing a custom faceplate icon](./demo/86788719_10157996735085818_3139665318654246912_n.jpg)
 
-![](./demo/86788719_10157996735085818_3139665318654246912_n.jpg)
+## Install
+
+```bash
+pip install ovos-mark1-utils
+```
 
 ## Usage
 
-drawing in python
+Draw a custom icon on the mouth display.
 
 ```python
 from ovos_mark1.faceplate import BlackScreen
-
 class MusicIcon(BlackScreen):
     str_grid = """
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -30,7 +33,7 @@ icon.print()  # show in terminal
 icon.display()  # show in mark1
 ```
 
-Animate the eyes
+Animate the eyes.
 
 ```python
 from ovos_mark1.eyes import Eyes
@@ -42,10 +45,9 @@ eyes = Eyes(bus)
 eyes.hue_spin()
 ```
 
-Animation helpers
+Build your own faceplate animation. Subclass `FacePlateAnimation` and define an `animate()` method that runs on each frame.
 
 ```python
-
 # it's snowing !
 class FallingDots(FacePlateAnimation):
     def __init__(self, n=10, bus=None):
@@ -74,7 +76,7 @@ class FallingDots(FacePlateAnimation):
             self._create = True
 ```
 
-Pre made animations
+Use a prebuilt animation.
 
 ```python
 from ovos_mark1.faceplate.animations import ParticleBox
@@ -97,3 +99,11 @@ for grid in a:
     grid.display(invert=False)
     sleep(0.5)
 ```
+
+## Related projects
+
+- [OpenVoiceOS/ovos-PHAL-plugin-mk1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk1): the PHAL plugin that receives the messagebus events this library sends and drives the Mark 1 enclosure hardware.
+
+## License
+
+Apache License 2.0. See [LICENSE](./LICENSE).
